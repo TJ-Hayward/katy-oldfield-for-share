@@ -10,6 +10,10 @@ yeseva-title {
   font: normal normal normal 80px/115px Yeseva One;
   color: inherit;
 }
+yeseva-loggedin {
+  font: normal normal normal 20px/40px Yeseva One;
+  color: inherit;
+}
 yeseva-40-n {
   font: normal normal normal 40px/47px Yeseva One;
 }

@@ -6,6 +6,7 @@ import Navbar from "../../components/Header/Header";
 import FunImage from "../../components/FunImage/FunImage";
 import AuthContext from "../../stores/authContext";
 import { useContext } from "react";
+import NotLoggedIn from "../../components/NotLoggedIn/NotLoggedIn";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -62,9 +63,12 @@ const Home = ({ mainImages }) => {
   //   router.replace("/");
   // }
 
-  return (
-    <>
-      {/* {loggedIn ? ( */}
+  if (!loggedIn) {
+    setTimeout(() => router.replace("/"), 200);
+  }
+
+  if (loggedIn) {
+    return (
       <>
         {mainImages.map((mainImages) => (
           <>
@@ -75,9 +79,12 @@ const Home = ({ mainImages }) => {
           </>
         ))}
       </>
-      {/* ) : (
-        <></>
-      )} */}
+    );
+  }
+
+  return (
+    <>
+      <NotLoggedIn />
     </>
   );
 };

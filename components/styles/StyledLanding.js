@@ -40,6 +40,26 @@ export const StyledLanding = styled.div`
       line-height: 600px;
     }
   }
+  .contents1 {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    /* margin-block: 0px; */
+    background-color: #0e431d;
+    color: white;
+    @media only screen and (max-width: 576px) {
+      font-size: 25px;
+      line-height: 25px;
+    }
+    @media only screen and (min-width: 576px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    @media only screen and (min-width: 1020px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
   /* .button-holder {
     align-items: center;
     position: relative;

@@ -11,6 +11,7 @@ import { StyledMarginTop } from "../../components/MarginTop";
 import { StyledProjectSlug } from "../../components/styles/StyledProjectSlug";
 import AuthContext from "../../stores/authContext";
 import { useContext } from "react";
+import NotLoggedIn from "../../components/NotLoggedIn/NotLoggedIn";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -46,24 +47,28 @@ export async function getStaticProps({ params }) {
 export default function FullProject({ project, hasReadPermission }) {
   const router = useRouter();
   const { user, login, loggedIn } = useContext(AuthContext);
-  // if (!loggedIn) {
-  //   router.replace("/");
-  // }
-  return (
-    <>
-      {/* {loggedIn ? ( */}
+
+  if (!loggedIn) {
+    setTimeout(() => router.replace("/"), 200);
+  }
+  if (loggedIn) {
+    return (
       <>
-        <Navbar />
-        <StyledProjectSlug>
-          <HeroSection project={project} />
+        <>
+          <Navbar />
+          <StyledProjectSlug>
+            <HeroSection project={project} />
 
-          <BigImages project={project} />
+            <BigImages project={project} />
 
-          <Testimonials project={project} />
-        </StyledProjectSlug>
+            <Testimonials project={project} />
+          </StyledProjectSlug>
+        </>
       </>
-    </>
-  );
+    );
+  }
+
+  return <NotLoggedIn />;
 }
 
 {
