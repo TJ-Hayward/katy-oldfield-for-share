@@ -1,10 +1,6 @@
 import { createClient } from "contentful";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import TopSection from "../components/HomePage/TopSection";
-import AboutMe from "../components/HomePage/AboutMe";
-import MiniProjectContainer from "../components/ProjectOverview/MiniProjects";
 import { useRouter } from "next/router";
 import AuthContext from "../stores/authContext";
 import { useContext } from "react";

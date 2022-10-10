@@ -23,17 +23,20 @@ const Navbar = ({ page }) => {
   }, []);
   return (
     <StyledHeader page={page}>
-      {console.log(page)}
       {/* <Row fluid className="header"> */}
       <ul>
         <li className="header-logo">
           {device !== "mobile" ? (
             <Link href="/projects">
-              <katy-logo>KATY OLDFIELD</katy-logo>
+              <a className="header_about">
+                <katy-logo>KATY OLDFIELD</katy-logo>
+              </a>
             </Link>
           ) : (
             <Link href="/projects">
-              <katy-logo>KO</katy-logo>
+              <a className="header_about">
+                <katy-logo>KO</katy-logo>
+              </a>
             </Link>
           )}
         </li>

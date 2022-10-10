@@ -55,59 +55,13 @@ export default function FullProject({ project, hasReadPermission }) {
       <>
         <Navbar />
         <StyledProjectSlug>
-          {/* <Parallax
-    id="parallax-main"
-    pages={5.5}
-    style={{ top: "flex-end", left: "0" }}
-  >
-    <div>
-      <ParallaxLayer
-        factor={1}
-        offset={0}
-        speed={0}
-        style={{ background: "white" }}
-      />
-      <ParallaxLayer
-        factor={1}
-        offset={0}
-        speed={0}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      > */}
           <HeroSection project={project} />
-          {/* </ParallaxLayer> */}
-          {/*
-      <ProjectDetails project={project} /> */}
-          {/* <ParallaxLayer
-        factor={3}
-        offset={1.5}
-        speed={0}
-        style={{ background: "white" }}
-      />
-      <ParallaxLayer
-        factor={3}
-        offset={1.5}
-        speed={0}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      > */}
+
           <BigImages project={project} />
-          {/* </ParallaxLayer> */}
 
           <Testimonials project={project} />
-          {/* </div> */}
-          {/* </Parallax> */}
         </StyledProjectSlug>
       </>
-      {/* ) : (
-        <></>
-      )} */}
     </>
   );
 }
