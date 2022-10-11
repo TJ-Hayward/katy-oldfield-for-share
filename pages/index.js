@@ -1,12 +1,13 @@
 import { createClient } from "contentful";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+
 import AuthContext from "../stores/authContext";
 import { useContext } from "react";
 import { Row } from "react-bootstrap";
 import { StyledLanding } from "../components/styles/StyledLanding";
 import CoolestSVG from "../components/CoolestSVG/CoolestSVG";
+import InitialLoginRedirect from "../stores/initialLogin";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -25,11 +26,6 @@ export async function getStaticProps() {
   };
 }
 const Container = styled.div`
-  /* .holder {
-    text-align: center;
-    padding-top: 500px;
-    padding-bottom: 500px;
-  } */
   .button {
     background-color: white;
   }
@@ -37,29 +33,7 @@ const Container = styled.div`
 
 export default function Home({ homeStuff, miniProject, hasReadPermission }) {
   const { user, login, loggedIn } = useContext(AuthContext);
-  // const [colour, setColour] = useState("white");
-  // const colourCheck = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY > 500 && window.scrollY < 1000) {
-  //     setColour("yellow");
-  //   } else if (window.scrollY > 1000 && window.scrollY < 1200) {
-  //     setColour("blue");
-  //     console.log(window.scrollY);
-  //   } else {
-  //     setColour("white");
-  //   }
-  // };
-  // useEffect(() => {
-  //   colourCheck();
-  //   window.addEventListener("scroll", () => {
-  //     colourCheck();
-  //   });
-  // }, []);
 
-  const router = useRouter();
-  if (loggedIn) {
-    setTimeout(() => router.replace("/projects"), 500);
-  }
   if (loggedIn) {
     return (
       <StyledLanding>
@@ -70,6 +44,7 @@ export default function Home({ homeStuff, miniProject, hasReadPermission }) {
             </yeseva-title>
           </Row>
         </div>
+        {InitialLoginRedirect()}
       </StyledLanding>
     );
   }
@@ -82,7 +57,6 @@ export default function Home({ homeStuff, miniProject, hasReadPermission }) {
             <CoolestSVG />
           </div>
         </yeseva-title>
-
         <div className="button-holder">
           <div className="buttons" onClick={login}>
             <a>Login</a>
@@ -91,19 +65,4 @@ export default function Home({ homeStuff, miniProject, hasReadPermission }) {
       </div>
     </StyledLanding>
   );
-}
-
-{
-  /* <div className="globalTheme">
-{homeStuff.map((homeStuff) => (
-  <>
-    <TopSection key={homeStuff.sys.id} homeStuff={homeStuff} />
-    <AboutMe key={homeStuff.sys.id} homeStuff={homeStuff} />
-  </>
-))}
-
-{miniProject.map((project) => (
-  <MiniProjectContainer key={project.sys.id} project={project} />
-))}
-</div> */
 }

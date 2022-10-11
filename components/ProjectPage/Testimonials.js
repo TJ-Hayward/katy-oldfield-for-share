@@ -24,13 +24,12 @@ export default function Testimonials({ project }) {
     });
   }, []);
   return (
+    <>
       <div style={{ width: "100%" }}>
         <div
           style={{
             "background-color": `${
-              projectData.testimonialColor
-                ? `${projectData.testimonialColor}`
-                : "#0e431d"
+              projectData.testimonialColor ? `${projectData.testimonialColor}` : "#0e431d"
             }`,
           }}
         >
@@ -43,9 +42,7 @@ export default function Testimonials({ project }) {
                   </Row>
                   <Row>
                     <Row fluid>
-                      <div className="actualTestimonials">
-                        {projectData.testimonial1}
-                      </div>
+                      <div className="actualTestimonials">{projectData.testimonial1}</div>
                     </Row>
                     <Row>
                       <ibmSmall className="testimonialPerson">
@@ -56,9 +53,7 @@ export default function Testimonials({ project }) {
                   <Row>
                     <Row>
                       <Row fluid>
-                        <div className="actualTestimonials">
-                          {projectData.testimonial2}
-                        </div>
+                        <div className="actualTestimonials">{projectData.testimonial2}</div>
                       </Row>
                       <Row>
                         <ibmSmall className="testimonialPerson">
@@ -70,9 +65,7 @@ export default function Testimonials({ project }) {
                   <Row>
                     <Row>
                       <Row>
-                        <div className="actualTestimonials">
-                          {projectData.testimonial3}
-                        </div>
+                        <div className="actualTestimonials">{projectData.testimonial3}</div>
                       </Row>
                       <Row>
                         <ibmSmall className="testimonialPerson">
@@ -85,16 +78,12 @@ export default function Testimonials({ project }) {
               ) : (
                 <>
                   <Row>
-                    <ibmSemi className="testimonials desk">
-                      Testimonials
-                    </ibmSemi>
+                    <ibmSemi className="testimonials desk">Testimonials</ibmSemi>
                   </Row>
                   <Row>
                     <Col>
                       <Row>
-                        <div className="actualTestimonials">
-                          {projectData.testimonial1}
-                        </div>
+                        <div className="actualTestimonials">{projectData.testimonial1}</div>
                       </Row>
                       <Row>
                         <ibmSmall className="testimonialPerson">
@@ -104,9 +93,7 @@ export default function Testimonials({ project }) {
                     </Col>
                     <Col>
                       <Row>
-                        <div className="actualTestimonials">
-                          {projectData.testimonial2}
-                        </div>
+                        <div className="actualTestimonials">{projectData.testimonial2}</div>
                       </Row>
                       <Row>
                         <ibmSmall className="testimonialPerson">
@@ -116,9 +103,7 @@ export default function Testimonials({ project }) {
                     </Col>
                     <Col>
                       <Row>
-                        <div className="actualTestimonials">
-                          {projectData.testimonial3}
-                        </div>
+                        <div className="actualTestimonials">{projectData.testimonial3}</div>
                       </Row>
                       <Row>
                         <ibmSmall className="testimonialPerson">
@@ -133,7 +118,6 @@ export default function Testimonials({ project }) {
           </StyledMarginWraperD>
         </div>
       </div>
-      {/* </ParallaxLayer> */}
     </>
   );
 }
