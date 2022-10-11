@@ -24,25 +24,6 @@ export default function Testimonials({ project }) {
     });
   }, []);
   return (
-    <>
-      {/* <ParallaxLayer
-        factor={1}
-        offset={4.9}
-        speed={0.7}
-        style={{ background: "#0E431D" }}
-      />
-      <ParallaxLayer
-        factor={1}
-        offset={4.5}
-        speed={0}
-        style={{
-          display: "flex",
-          // justifyContent: "center",
-          alignItems: "center",
-          color: "white",
-          width: "100%",
-        }}
-      > */}
       <div style={{ width: "100%" }}>
         <div
           style={{
